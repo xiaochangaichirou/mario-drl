@@ -5,7 +5,7 @@ import torch.nn.functional as F
 import numpy as np
 from utils import *
 BATCH = 32
-ACTIONS = 2
+ACTIONS = len(COMPLEX_MOVEMENT)
 
 class DQN(nn.Module):
     def __init__(self):
