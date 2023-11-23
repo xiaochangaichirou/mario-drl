@@ -13,14 +13,6 @@ D = memory.Memory(buffer_capacity)
 
 
 done = True
-<<<<<<< HEAD
-for step in range(5000):
-    if done:
-        state = env.reset()
-    state, reward, done, info = env.step(env.action_space.sample()) #state (240 256 3)
-    time.sleep(0.01)
-    env.render()
-=======
 state = env.reset()
 x_t, reward, done, info = env.step(env.action_space.sample())
 x_t = cv2.cvtColor(cv2.resize(x_t, (80, 80)), cv2.COLOR_BGR2GRAY)
@@ -43,6 +35,5 @@ while True:
     D.push(s_t, s_t1, a_t, reward, not done)
 
 
->>>>>>> 0404496074adb7cf734c79bb869c7458ac672942
 
 env.close()
