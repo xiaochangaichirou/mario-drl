@@ -43,4 +43,6 @@ while True:
     s_t1 = np.ascontiguousarray(s_t1, dtype=np.float32)
     D.push(s_t, s_t1, a_t, reward, not done)
 
+
+
 env.close()
