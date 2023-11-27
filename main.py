@@ -33,7 +33,6 @@ while True:
         state = env.reset()
     state, reward, done, info = env.step(env.action_space.sample())
     time.sleep(0.01)
-    env.render()
     s_t_tensor = t.Tensor(s_t).unsqueeze(0).to(device)
     a_t = online_net.get_action(s_t_tensor)
     a_t = a_t.item()
