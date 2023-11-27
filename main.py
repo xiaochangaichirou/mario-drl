@@ -43,7 +43,9 @@ while True:
     # s_t1 = np.append(x_t1, s_t[:,:,1:], axis = 2)
     s_t1 = np.append(x_t1, s_t[:3, :, :], axis=0)
     s_t1 = np.ascontiguousarray(s_t1, dtype=np.float32)
-    D.push(s_t, s_t1, a_t, reward, not done)
+    a_t_np = np.zeros(ACTIONS)
+    a_t_np[a_t] = 1
+    D.push(s_t, s_t1, a_t_np, reward, not done)
     if len(D) > buffer_capacity:
         D.pop()
     if turn > OBSERVE:
