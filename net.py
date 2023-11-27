@@ -27,7 +27,7 @@ class DQN(nn.Module):
     def train_model(cls, online_net, optimizer, batch):
         states = t.tensor(np.array(batch.state), dtype=torch.float32).to(device)
         next_states = t.tensor(np.array(batch.next_state),dtype=torch.float32).to(device)
-        actions = t.tensor(np.array(batch.action)).to(device)
+        actions = t.Tensor(np.array(batch.action)).to(device)
         rewards = t.Tensor(np.array(batch.reward)).to(device)
         masks = t.Tensor(np.array(batch.mask)).to(device)
         pred = online_net(states).squeeze(1)
