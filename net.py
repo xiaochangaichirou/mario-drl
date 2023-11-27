@@ -20,7 +20,7 @@ class DQN(nn.Module):
         x = self.pool1(F.relu(self.conv1(x)))
         x = F.relu(self.conv2(x))
         x = F.relu(self.conv3(x))
-        x  = x.view(x.size(0), -1)
+        x = x.view(x.size(0), -1)
         x = self.fc1(x)
         return self.head(x)
 
