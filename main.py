@@ -40,7 +40,8 @@ s_t = np.ascontiguousarray(s_t, dtype=np.float32)
 time.sleep(0.01)
 turn = 0
 while True:
-    if done or turn % 2000 == 0:
+    env.render()
+    if done :
         state = env.reset()
     time.sleep(0.01)
     s_t_tensor = t.Tensor(s_t).unsqueeze(0).to(device)
